@@ -107,15 +107,15 @@ func (l *GelfLogger) ShutdownLogger() error {
 func (l *GelfLogger) Logm(timestamp time.Time, level gomol.LogLevel, m map[string]interface{}, msg string) error {
 	attrs := l.getAttrs(m)
 	switch level {
-	case gomol.LEVEL_DEBUG:
+	case gomol.LevelDebug:
 		l.getLogger().Dbgm(attrs, msg)
-	case gomol.LEVEL_INFO:
+	case gomol.LevelInfo:
 		l.getLogger().Infom(attrs, msg)
-	case gomol.LEVEL_WARNING:
+	case gomol.LevelWarning:
 		l.getLogger().Warnm(attrs, msg)
-	case gomol.LEVEL_ERROR:
+	case gomol.LevelError:
 		l.getLogger().Errm(attrs, msg)
-	case gomol.LEVEL_FATAL:
+	case gomol.LevelFatal:
 		l.getLogger().Emergm(attrs, msg)
 
 	}
