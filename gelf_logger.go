@@ -53,7 +53,7 @@ func (l *GelfLogger) getLogger() gelfClientLogger {
 
 func (l *GelfLogger) getAttrs(m map[string]interface{}) map[string]interface{} {
 	attrs := make(map[string]interface{}, 0)
-	for key, val := range l.base.BaseAttrs {
+	for key, val := range l.base.BaseAttrs.Attrs() {
 		attrs[key] = val
 	}
 	if m != nil {
