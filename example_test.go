@@ -1,15 +1,14 @@
 package gomolgelf
 
 import (
-	gg "."
 	"github.com/aphistic/gomol"
 )
 
 // Code for the README example to make sure it still builds!
 func Example() {
 	// Add an io.Writer logger
-	gelfCfg := gg.NewGelfLoggerConfig()
-	gelfLogger, _ := gg.NewGelfLogger(gelfCfg)
+	gelfCfg := NewGelfLoggerConfig()
+	gelfLogger, _ := NewGelfLogger(gelfCfg)
 	gomol.AddLogger(gelfLogger)
 
 	// Set some global attrs that will be added to all
